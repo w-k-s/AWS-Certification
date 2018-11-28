@@ -1,6 +1,6 @@
-#3. Identity Access Management
+# 3. Identity Access Management
 
-##3.1 Introduction
+## 3.1 Introduction
 
 - Manage users and their level of access to the AWS console.
 
@@ -16,20 +16,20 @@ It provides:
 - Integrates with many AWS services
 - PCI DSS compliant
 
-##3.2 Terminology
+## 3.2 Terminology
 
 - Users: AWS User
 - Groups: Group of users with the same permissions
 - Roles: An IAM role is similar to a user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS. However, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it
 - Policy: A set of permissions. Policy Documents are written in JSON. 
 
-##3.3 Region
+## 3.3 Region
 
 - IAM Users, groups, roles, permissions and policies are global; they are not specific to any region or availability zone.
 
-##3.4 User Management
+## 3.4 User Management
 
-###3.4.1 Root User
+### 3.4.1 Root User
 
 - The root account is the account that you used to sign up on AWS.
 - Root user has AdministratorAccess (Access to all AWS services).
@@ -37,7 +37,7 @@ It provides:
 - Always setup Multifactor authentication on root account.
 - can customize Password rotation policies
 
-###3.4.2. New Users
+### 3.4.2. New Users
 
 - New users have no permissions when created
 
@@ -52,7 +52,7 @@ It provides:
 
 - Permissions can be attach to a user via groups and individually.
 
-##3.5 Roles
+## 3.5 Roles
 
 IAM roles are a secure way to grant permissions to entities that you trust
 
@@ -63,7 +63,7 @@ e.g.
 - An AWS service that needs to act on resources in your account to provide its features
 
 
-##3.6 Policy Documents
+## 3.6 Policy Documents
 
 - Policy Documents list permission in JSON format
 - For example, the policy document of a PowerUser is:
@@ -94,7 +94,7 @@ e.g.
 }
 ```
 
-##4.0 Quiz
+## 4.0 Quiz
 
 1. Which statement best describes IAM
 

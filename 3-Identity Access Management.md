@@ -93,3 +93,54 @@ e.g.
     ]
 }
 ```
+
+##4.0 Quiz
+
+1. Which statement best describes IAM
+
+- IAM allows you to manage users, groups, roles, and their corresponding level of access to the AWS Platform.
+
+- IAM allows you to manage users passwords only. AWS staff must create new users for your organisation. This is done by raising a ticket.
+
+- IAM allows you to manage permissions for AWS resources only.
+
+- IAM stands for Improvised Application Management and it allows you to deploy and manage applications in the AWS Cloud.
+
+2. Power User Access allows ________.
+
+- Full Access to all AWS services and resources
+
+- Read Only access to all AWS services and resources
+
+- Access to all AWS services except for management of groups and users within IAM
+
+- Users to inspect the source code of the AWS platform
+
+3. What level of access does the "root" account have?
+
+- ReadOnlyAccess
+- PowerUserAccess
+- AdministratorAccess
+- NoAccess
+
+3. What level of access does a new user have?
+
+- ReadOnlyAccess
+- PowerUserAccess
+- AdministratorAccess
+- NoAccess
+
+4. Access Key ID & Secret Access Key used for?
+
+- Loging into AWS Console
+- Creating an EC2 instance
+- Encrypting S3 files
+- Communicating with AWS API or CLI
+
+5. What is an additional way to secure IAM for both the root login and new users alike?
+
+- Implement multi-factor Authentication for all accounts. 
+- Store the access key id and secret access key of all users in a publically accessible plain text document on S3 of which only you and members of your organisation know the address to.
+- Configure the AWS console so that you can only log in to it from a specific IP Address range
+- Configure the AWS console so that you can only log in to it from your internal network IP address range.
+

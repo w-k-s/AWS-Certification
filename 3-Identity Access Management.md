@@ -144,3 +144,37 @@ e.g.
 - Configure the AWS console so that you can only log in to it from a specific IP Address range
 - Configure the AWS console so that you can only log in to it from your internal network IP address range.
 
+6. You are a solutions architect working for a large engineering company who are moving their existing legacy hardware to AWS. You have configured their first AWS account and you have set up IAM. Your company will be primarily based out of West Germany, however they will have a small subsidiary operating out of South Korea and you will need an AWS environment configured there as well. Which of the following statements is true
+
+- You will then need to configure Users and Policy Documents for each region respectively.
+- You will need to configure Users and Policy Documents only once, as these are applied globally.
+- You will need to configure your users regionally, however your policy documents are global.
+- You will need to configure your policy documents regionally, however your users are global.
+
+7. You have a client who is considering moving to AWS services and do not yet have an account. What is the first thing the company should do to set up an AWS Account?
+
+- Set up an account using Cloud Search.
+- Set up an account using their company email address.
+- Set up an account via SQS (Simple Queue Service)
+- Set up an account via SNS (Simple Notification Service)
+
+8. You are a security administrator working for a hotel chain. You have a new member of staff who has started as a systems administrator and they will need full access to the AWS console. You have created the user account and generated the access key id and the secret access key. You have moved this user into the group where the other administrators are and you have provided the new user with their secret access key and their access key id. However when they go to log in to the AWS console, they cannot sign in. What could be the cause of this?
+
+- You have not applied the "log in from console" policy document to the user. You must apply this first so that they can log in.
+- You have not applied the "log in from console" policy document to the user. You must apply this first so that they can log in.
+- You have not yet activated multi-factor authentication for the user, so by default they will not be able to log in.
+- You cannot log in to the AWS console using the Access Key ID and Secret Access Key, instead you must generate a password for the user and supply the user with this password, as well as the unique link to sign in to the AWS console. 
+
+9. By default when you create a new user in the IAM console, what level of access do they have?
+
+- Read Only Access to all AWS services
+- No access to all AWS services
+- Administrator access to all AWS Services
+- Power USer access to all aws services
+
+10. In what language are policy documents written in?
+
+- Node.js
+- Java
+- Python
+- JSON

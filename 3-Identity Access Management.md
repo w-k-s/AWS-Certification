@@ -54,7 +54,7 @@ It provides:
 
 ## 3.5 Roles
 
-IAM roles are a secure way to grant permissions to entities that you trust
+**IAM roles are a secure way to grant permissions to entities that you trust**
 
 e.g.
 

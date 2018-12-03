@@ -40,7 +40,7 @@ This means that if an existing file is updated or deleted, it may take some time
 **S3 Standard**
 
 - **99.99% availability**: Files will always be available to access
-- **99.99% durability**: Files are guaranteed to not be lost.
+- **99.9999999999% durability**: Files are guaranteed to not be lost.
 - Stored redundantly on multiple devices in multiple availability zones.
 - Designed to sustain loss of 2 availability zones
 
@@ -124,9 +124,14 @@ The KMS key keeps track of all uses of the key. Access permissions can also be s
 ## 4.2 CloudFront
 
 - Edge location is a location where data will be cached.
+
 - Origin is the origin of all the files that the CDN will distribute (i.e. the location that hosts the original content). The origin is usually an EC2 instance, an S3 bucket or an Elastic load balancer
-- Distribution: The name given to the CDN which consists of a collection of edge locations. There are two kinds of distributions: Web (for website caching) and RMTP (which is used for streaming flash files)
+
+- Distribution: The name given to the CDN which consists of a collection of edge locations. 
+There are two kinds of distributions: Web (for website caching) and RMTP (which is used for streaming flash files)
+
 - Objects are stored in cloud front for as long as their TTL (Time-To-Live, measured in seconds).
+
 - The cache can be cleared but this will incur a charge.
 
 
@@ -354,6 +359,25 @@ Snowballs are reused by Amazon however the disk is cleared out securely by amazo
 - Use security groups to blacklist the IP addresses of the sites that do this.
 - Use EBS rather than S3 to store the content. 
 
+21. A bucket named `timothy1` is created in the `eu-west-a` region. What will it's URL be?
+
+22. A file `blueprint.html` is uploaded to `timothy1`; if the file is uploaded successfully, what HTTP status code can you expect?
+
+23. Once `blueprint.html` is uploaded, how long will it take until the file becomes accessible? What is this type of consistency model called?
+
+24. An update `blueprint.html` is uploaded. How long will it take until the update to the file becomes visible? What is this type of consistency model called?
+
+25. The URL to `blueprint.html` is shared. When it is accessed, an error is displayed. Why is this? and how can it be fixed? 
+
+26. It is desired to convert `blueprint.html` into a website. What will it's website URL be? Can `blueprint.html` be set as the index page? 
+
+27. What is a cloud gateway? 
+
+28. State two differences between `File Gateway` and `Volume Gateway`?
+
+29. What is the difference between `Stored Volume Gateway` and `Cached Volume Gateway`?
+
+
 Answers: 
 1. A
 2. A
@@ -375,3 +399,13 @@ Answers:
 18. D
 19. C
 20. B
+21. `https://s3-eu-west-a.awsamazon.com/timothy1`
+22. HTTP 200 OK
+23. PUTS of new objects are immediately available (Read after write consistency)
+24. update PUTS could happen instantly or take a while (eventual consistency)
+25. Buckets and their objects are private by default. To make the link accessible, the bucket must be made public and then the file must be made public.
+26. `timothy1.s3-website.eu-west-a.awsamazon.com`. Yes, `blueprint.html` can be set as the index page.
+27. AWS Storage Gateway enabled hybrid cloud storage. It connects on-premise applications with S3 storage.
+28. `File Gateway` can only store flat files; and it uses the NFS protocol.
+`Volume Gateway` can store block files; it uses the ISCSI protocol.
+29. `Stored Volume Gateway`: all data is stored locally, asynchronously backed up to S3. `Cache Volume Gateway`: all data is stored on S3. frequently accessed data is cached locally.

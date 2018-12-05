@@ -31,7 +31,7 @@ This means that if an existing file is updated or deleted, it may take some time
 - Object consits of:
 - **Key**: the name of the file
 - **Value**: A bag of bytes
-- **Version ID**: Version of the file
+- **Version ID**: Version of the file (`null`, unless Versioning is enabled)
 - **Metadata**: data about the file
 - **Subresources** e.g. Access Control Lists (list of users, groups roles that can access the file)
 

@@ -377,6 +377,40 @@ Snowballs are reused by Amazon however the disk is cleared out securely by amazo
 
 29. What is the difference between `Stored Volume Gateway` and `Cached Volume Gateway`?
 
+30. Your company decides wants to encrypt a fil, `SecretFile.txt`, stored on S3. Options are SSE-S3 and SSE-KMS; what advantage does KMS have over SSE-S3?
+
+31. How can `SecretFile.txt` be secured while it is in transit.
+
+32. Consider an S3 bucket where versioning has not yet been enabled. `file1 ` is uploaded to this bucket. Versioning is then enabled. two files are then uploaded: `file2` and `file3`. An update is made to `file2`.
+`file3` is deleted.
+Which of the following statement correctly describes the number of versions each file has:
+
+- [ ] A. `file1`: 1 version, `file2`: 2 versions, `file3`: None.
+- [ ] B. `file1`: 1 version, `file2`: 2 versions, `file3`: 2 versions.
+- [ ] C. `file1`: None, `file2`: 2 versions, `file3`: 2 versions.
+- [ ] D. `file1`: None, `file2`: 2 versions, `file3`: 1 version.
+
+33. A file has been stored in Glacier as it is rarely accessed. However, due to an emergency, the file needs to be accessed immediately. What kind of retrievel is needed:
+
+- [ ] A. Expedited
+- [ ] B. Standard
+- [ ] C. Bulk
+
+33. A file has been stored in Glacier as it is rarely accessed. A file needs to retrieved, but it is not urgent so the cheapest option is used. How many hours will it take to retrieve the file
+
+- [ ] A. A few minutes
+- [ ] B. 3 - 5 hours
+- [ ] C. 5-12 hours
+
+35. A file is cached on CloudFront. What needs to be set to control when the cached version of the file will be expired. Can the cache of the file be cleared earlier than this?
+
+36. State two requirements for cross-region replication to work
+
+37. After Cross-region replication is enabled, how can the files from one bucket be copied to the other bucket?
+
+38. After Cross-region replication is enabled, how can the updates to one file be copied to the same file in the other region?
+
+39. After Cross-region replication is enabled, will deleting the original file cause the copy in the other region to be deleted?
 
 Answers: 
 1. A
@@ -409,3 +443,13 @@ Answers:
 28. `File Gateway` can only store flat files; and it uses the NFS protocol.
 `Volume Gateway` can store block files; it uses the ISCSI protocol.
 29. `Stored Volume Gateway`: all data is stored locally, asynchronously backed up to S3. `Cache Volume Gateway`: all data is stored on S3. frequently accessed data is cached locally.
+30. KMS audits each usage of the key. KMS has special permissions for the envelope key (the key that is used to protect the encryption key)
+31. HTTPs can be used for securing files when they are in transit.
+32. C. `file1`: None, `file2`: 2 versions, `file3`: 2 versions.
+33. A. Expedited retrieval.
+34. C. Bulk retrieval takes 5 - 12 hours.
+35. The `Time-To-Live (TTL)` needs to be set. The cache can be cleared before then, but it will incur a charge.
+36. Source and Destination buckets must be in different regions. Both buckets must have versioning enabled.
+37. Using the `s3 cp` from the AWS CLII
+38. Updates to files are automatically replicated between the two regions
+39. No. Deletes are not replicated across regions.
